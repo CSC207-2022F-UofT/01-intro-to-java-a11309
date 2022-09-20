@@ -18,18 +18,18 @@
 public class Basics {
 
     /**
-     *  2. In Python, we could have code in a block labelled:
-     *        if __name__ == '__main__':
-     *            # Code goes in here
-     *    However in Java, the equivalent is the main method:
-     *        public static void main(final String[] args){
-     *            // Code goes in here
-     *        }
-     *
-     *    When you run this file (Basics.java), the code within the main
-     *    method is run.
-     *
-     *    (Relevant reading: 1.1.2. Defining methods)
+     * 2. In Python, we could have code in a block labelled:
+     * if __name__ == '__main__':
+     * # Code goes in here
+     * However in Java, the equivalent is the main method:
+     * public static void main(final String[] args){
+     * // Code goes in here
+     * }
+     * <p>
+     * When you run this file (Basics.java), the code within the main
+     * method is run.
+     * <p>
+     * (Relevant reading: 1.1.2. Defining methods)
      */
     public static void main(final String[] args) {
         /* 3. In Python, we could print out code using the print() function.
@@ -40,11 +40,10 @@ public class Basics {
          */
         System.out.println(7 + 5);
 
-        /* TODO (Task 1): Write a line of code below that prints the string
+        /* [Done]TODO (Task 1): Write a line of code below that prints the string
          *                Hello World!
          */
-
-
+        System.out.println("Hello World!");
 
         /* 4. In Python, we could declare variables using a simple assignment
          *    statement. For example:
@@ -59,11 +58,10 @@ public class Basics {
          */
 
         /*
-         * TODO (Task 2): Create a variable named my_variable and assign it the
+         * [Done]TODO (Task 2): Create a variable named my_variable and assign it the
          *                value 100.
          */
-
-
+        int my_variable = 100;
 
         /* Do not remove the line below: if you did task 2 correctly, then
          * you should see the message "my_variable's value is 100" if you run
@@ -88,7 +86,7 @@ public class Basics {
          */
 
         /*
-         * TODO (Task 3): Create a for-loop that loops from 10 to 0, printing
+         * [Done]TODO (Task 3): Create a for-loop that loops from 10 to 0, printing
          *                the following at each iteration:
          *                Current count: #
          *
@@ -99,41 +97,43 @@ public class Basics {
          * Current count: 1
          * Current count: 0
          */
-
-
+        for (int i = 10; i >= 0; i--) {
+            String message = "Current count: " + i;
+            System.out.println(message);
+        }
     }
 
     /**
-     *  6. Below is a method named split which returns a String,
-     *    as indicated by the 'String' part of the header. It takes one
-     *    parameter named to_split, whose type is also a String.
-     *
-     *    This block of code above the method is called the doc comment -- this
-     *    is equivalent to docstrings in Python.
-     *
-     *    Below, we provide descriptions of what the parameters are and details
-     *    about what is returned.
-     *
+     * 6. Below is a method named split which returns a String,
+     * as indicated by the 'String' part of the header. It takes one
+     * parameter named to_split, whose type is also a String.
+     * <p>
+     * This block of code above the method is called the doc comment -- this
+     * is equivalent to docstrings in Python.
+     * <p>
+     * Below, we provide descriptions of what the parameters are and details
+     * about what is returned.
+     * <p>
      * Create a String named 'ret' and get the first letter of
      * each word inside to_string. to_string is a String containing exactly
      * 7 words, separated by spaces.
-     *
+     * <p>
      * You may want to use String.split() and String.charAt() methods.
      * See 1.5.2. APIs for their APIs.
-     *
+     * <p>
      * For example, calling the below method on the string:
-     *    "Idol Long Oolong Vertical Europe University Toyota"
+     * "Idol Long Oolong Vertical Europe University Toyota"
      * should return "ILOVEUT"
-     *
+     * <p>
      * (Relevant readings: 1.4. Strings and 1.4.4. StringBuilder.
-     *                     1.8.2. for Loops may be useful too.)
+     * 1.8.2. for Loops may be useful too.)
      *
-     * @param to_split   A string containing EXACTLY 7 words, separated by
-     *                   spaces.
-     * @return           The first letter of every word in to_split
+     * @param to_split A string containing EXACTLY 7 words, separated by
+     *                 spaces.
+     * @return The first letter of every word in to_split
      */
     public static String split(String to_split) {
-        /* TODO (Task 4): Complete this method body.
+        /* [Done]TODO (Task 4): Complete this method body.
          *                The String methods .split and .charAt may be helpful,
          *                along with the StringBuilder.append
          *                You may also assume that to_split always has 7 words
@@ -141,36 +141,45 @@ public class Basics {
          *                you may use them if you wish.
          */
         StringBuilder ret = new StringBuilder();
-
-        // Fill in the rest of the body here
-
+        String[] s = to_split.split(" ");
+        for (String word : s) {
+            ret.append(word.charAt(0));
+        }
         return ret.toString();
     }
 
     /**
      * 7. Below is a method that takes in an integer array (similar to a list
-     *    of integers). The method's name is 'oddSum' and it returns an int
-     *    as indicated by the 'int' in the method header.
-     *
+     * of integers). The method's name is 'oddSum' and it returns an int
+     * as indicated by the 'int' in the method header.
+     * <p>
      * Return the sum of all integers at odd indices in the given array.
      * If there are no items at odd indices (e.g. a list with 0 or 1 elements),
      * return 0.
-     *
+     * <p>
      * (Relevant readings: 1.6. Arrays and 1.8.2. for Loops)
      *
-     * @param arr    An array of integers
-     * @return       The sum of all integers at odd indices in arr
+     * @param arr An array of integers
+     * @return The sum of all integers at odd indices in arr
      */
     public static int oddSum(int[] arr) {
         int current_sum = 0;
-
-        /* TODO (Task 5): Complete this method body using a for-loop.
+        /* [Done]TODO (Task 5): Complete this method body using a for-loop.
          *                You can find the length of an array by using the
          *                .length attribute (e.g. arr.length)
          *                You can index into arrays as we do in Python
          *                (e.g. arr[i] gives you the item at index i).
          */
-
+        int n = arr.length;
+        if (n == 0 | n == 1) {
+            return 0;
+        } else {
+            for (int i = 1; i < arr.length; i++) {
+                if (i % 2 != 0) {
+                    current_sum += arr[i];
+                }
+            }
+        }
         return current_sum;
     }
 
